@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="zen_page_title">禅意空间 — 心灵净土</title>
+  <link rel="stylesheet" href="zen_style.css">
+</head>
+<body>
+
+  <!-- Full-Height Skeuomorphic Eco-Aero Frame -->
+  <div class="zen-aero-shell">
+    
+    <!-- Glossy Top Glass Header -->
+    <header class="zen-glass-header">
+      <div class="zen-title-group">
+        <div class="glossy-orb-icon">禅</div>
+        <span data-i18n="zen_site_title">禅意花园 · 海水洞</span>
+      </div>
+      <div class="zen-header-controls">
+        <select id="zen-lang-switcher" aria-label="Language">
+          <option value="zh" selected>简体中文</option>
+          <option value="ja">日本語</option>
+        </select>
+        <button class="skeuo-close-btn" onclick="window.close()" title="Close">✕</button>
+      </div>
+    </header>
+
+    <!-- Main Two-Column Skeuomorphic Sanctuary -->
+    <main class="zen-sanctuary-body">
+      
+      <!-- Left Column: Large Glossy Framed Scenic Viewport -->
+      <section class="zen-viewport-panel">
+        <div class="beveled-photo-frame">
+          <img src="assets/peace.jpg" alt="Zen Scenery" id="active-zen-img" class="zen-scenery-img">
+          <div class="glass-caption-bar">
+            <h1 id="zen-quote-title" data-i18n="default_title">水善利万物而不争</h1>
+            <p id="zen-quote-text" data-i18n="default_text">静水流深，涟漪微动，洗去尘世的一切喧嚣与烦恼。</p>
+          </div>
+        </div>
+
+        <!-- Bottom Skeuomorphic Thumbnail Dock -->
+        <div class="zen-dock-tray">
+          <div class="zen-dock-item active" data-img="assets/peace.jpg" data-title-zh="水善利万物而不争" data-title-ja="上善若水" data-text-zh="静水流深，涟漪微动，洗去尘世的一切喧嚣与烦恼。" data-text-ja="静水流深、波紋微動、世俗の喧騒と煩悩を洗い流す。">
+            <img src="assets/peace.jpg" alt="peace">
+            <span data-i18n="thumb_1">碧水涟漪</span>
+          </div>
+          <div class="zen-dock-item" data-img="assets/droplets.jpg" data-title-zh="洗心革面" data-title-ja="清浄洗心" data-text-zh="捧清泉以濯双手，清净六根，体悟当下即是的觉醒。" data-text-ja="清泉で両手を洗い、六根を清め、今この瞬間の目覚めを知る。">
+            <img src="assets/droplets.jpg" alt="droplets">
+            <span data-i18n="thumb_2">清泉洗心</span>
+          </div>
+          <div class="zen-dock-item" data-img="assets/forest.jpg" data-title-zh="葱郁林海" data-title-ja="深山幽谷" data-text-zh="森罗万象，同归于寂。在绿意盎然中聆听大自然的呼吸。" data-text-ja="森羅万象、寂に帰す。緑豊かな自然の息吹に耳を澄ます。">
+            <img src="assets/forest.jpg" alt="forest">
+            <span data-i18n="thumb_3">林海森罗</span>
+          </div>
+          <div class="zen-dock-item" data-img="assets/grass.jpg" data-title-zh="草露晶莹" data-title-ja="一葉一菩提" data-text-zh="一花一世界，一叶一菩提。露珠折射出宇宙的无限奥秘。" data-text-ja="一華一世界、一葉一菩提。露の滴に宇宙の無限の神秘を映す。">
+            <img src="assets/grass.jpg" alt="grass">
+            <span data-i18n="thumb_4">草木甘露</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Tactile Skeuomorphic Zen Tools & Daily Gatha -->
+      <aside class="zen-sidebar-panel">
+        
+        <!-- Module 1: Glossy Sutra Plaque -->
+        <div class="skeuo-card">
+          <div class="skeuo-card-header">
+            <span data-i18n="card_gatha_title">每日禅偈</span>
+          </div>
+          <div class="skeuo-card-body gatha-scroll">
+            <p class="vertical-gatha" id="daily-gatha" data-i18n="gatha_verse">
+              菩提本无树，<br>
+              明镜亦非台。<br>
+              本来无一物，<br>
+              何处惹尘埃。
+            </p>
+          </div>
+        </div>
+
+        <!-- Module 2: Tactile Gel Buttons for Meditation & Navigation -->
+        <div class="skeuo-card">
+          <div class="skeuo-card-header">
+            <span data-i18n="card_tools_title">静心法器</span>
+          </div>
+          <div class="skeuo-card-body tool-stack">
+            <button class="glossy-eco-btn" id="breathe-toggle-btn" data-i18n="btn_breathe">开启呼吸引导</button>
+            <button class="glossy-eco-btn" id="next-asset-btn" data-i18n="btn_next">流转下一意境 »</button>
+          </div>
+        </div>
+
+      </aside>
+
+    </main>
+
+    <!-- Glossy Status Footer -->
+    <footer class="zen-glass-footer">
+      <span id="zen-status-text" data-i18n="status_text">心如明镜台，时时勤拂拭。</span>
+      <span>海水洞 · 纯净自然</span>
+    </footer>
+
+  </div>
+
+  <!-- Skeuomorphic Breathing Sphere Overlay -->
+  <div id="breathe-modal" class="breathe-modal hidden">
+    <div class="breathe-glass-box">
+      <div class="breathe-sphere" id="breathe-circle">
+        <span id="breathe-text">吸气...</span>
+      </div>
+      <button class="glossy-eco-btn" id="close-breathe" data-i18n="btn_close_breathe">结束冥想</button>
+    </div>
+  </div>
+
+  <script src="zen.js"></script>
+</body>
+</html>
