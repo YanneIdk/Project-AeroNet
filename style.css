@@ -1,0 +1,467 @@
+/* === RESET & WALLPAPER BACKGROUND === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", "Microsoft YaHei", "Meiryo", "Lucida Grande", Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  color: #1b2a38;
+  background: radial-gradient(circle at 20% 20%, #7ee8fa 0%, #2c98f0 45%, #0b4f8a 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px 15px;
+}
+
+/* === PORTRAIT OUTER AERO WINDOW (High Translucency Glass) === */
+.aero-main-window {
+  width: 100%;
+  max-width: 780px;
+  min-height: calc(100vh - 40px);
+  background: rgba(215, 238, 255, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow: 
+    0 15px 35px rgba(0, 25, 55, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+/* === CLASSIC MODE TOGGLE (Restored original cleaner look) === */
+.aero-main-window.classic-mode {
+  background: rgba(230, 245, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 10, 30, 0.2);
+}
+
+/* === LARGE SCREEN RESPONSIVENESS (>1920px takes ~50% width) === */
+@media (min-width: 1920px) {
+  .aero-main-window {
+    max-width: 50vw;
+  }
+}
+
+/* === TITLE BAR & WINDOW CONTROLS === */
+.window-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 6px 8px 6px;
+  color: #041828;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+}
+
+.window-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title-icon {
+  width: 18px;
+  height: 18px;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#lang-switcher {
+  font-size: 11px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  border: 1px solid rgba(40, 90, 140, 0.6);
+  background: linear-gradient(to bottom, #ffffff 0%, #dcebf7 100%);
+  margin-right: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.8);
+  opacity: 0.9;
+  transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+#lang-switcher:hover {
+  opacity: 1;
+  filter: brightness(1.08);
+}
+
+/* === CLOSE BUTTON === */
+.win-btn {
+  width: 38px;
+  height: 20px;
+  border: 1px solid rgba(110, 15, 15, 0.85);
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  text-shadow: 0 -1px 1px rgba(90, 0, 0, 0.7);
+  cursor: pointer;
+  transition: filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.win-btn.close {
+  background: linear-gradient(
+    to bottom,
+    #ff9c9c 0%,
+    #f23838 50%,
+    #cc1010 51%,
+    #eb4242 100%
+  );
+  box-shadow: 
+    0 2px 5px rgba(180, 20, 20, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  opacity: 1;
+}
+
+.win-btn.close:hover {
+  filter: brightness(1.18);
+  box-shadow: 
+    0 0 8px rgba(255, 95, 95, 0.75),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+/* === GLOSSY AQUA NAVIGATION BAR === */
+.glossy-navbar {
+  background: linear-gradient(to bottom, rgba(89,179,245,0.9) 0%, rgba(30,130,217,0.9) 50%, rgba(13,102,189,0.95) 51%, rgba(38,147,230,0.9) 100%);
+  border: 1px solid rgba(8, 70, 130, 0.8);
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 4px 10px rgba(0,40,90,0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.glossy-navbar ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.glossy-navbar li a {
+  display: block;
+  padding: 9px 14px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 -1px 1px rgba(0, 40, 85, 0.7);
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+  transition: filter 0.2s ease, background 0.2s ease;
+}
+
+.glossy-navbar li a:hover,
+.glossy-navbar li a.active {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.25) 50%, rgba(0,0,0,0.05) 51%, rgba(255,255,255,0.35) 100%);
+  filter: brightness(1.12);
+  text-shadow: 0 0 6px rgba(255,255,255,0.9);
+}
+
+/* === INNER WHITE/ICE CONTENT WELL === */
+.window-body {
+  background: linear-gradient(to bottom, #f4faff 0%, #ffffff 100%);
+  border-left: 1px solid rgba(80, 140, 200, 0.7);
+  border-right: 1px solid rgba(80, 140, 200, 0.7);
+  padding: 16px;
+  flex-grow: 1;
+  box-shadow: inset 0 2px 5px rgba(0,50,100,0.08);
+}
+
+/* === CORPORATE HERO BANNER (Homepage) === */
+.hero-banner {
+  height: 220px;
+  border-radius: 6px;
+  border: 1px solid rgba(100, 160, 220, 0.8);
+  background: linear-gradient(135deg, #0072ff 0%, #00c6ff 60%, #92fe9d 100%);
+  box-shadow: 0 6px 15px rgba(0, 75, 145, 0.3), inset 0 2px 2px rgba(255,255,255,0.9);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === RIHAIHUI HERO BANNER (water.png fading into grassy green on the right) === */
+.hero-banner-rihai {
+  height: 220px;
+  border-radius: 6px;
+  border: 1px solid rgba(100, 160, 220, 0.8);
+  background: 
+    linear-gradient(90deg, rgba(0, 114, 255, 0.15) 0%, rgba(68, 173, 31, 0.8) 100%),
+    url('assets/water.png');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 6px 15px rgba(0, 75, 145, 0.3), inset 0 2px 2px rgba(255,255,255,0.9);
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 5px;
+  padding: 14px 18px;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* Whiter and more translucent hero overlay for the second page */
+.hero-overlay-rihai {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  padding: 14px 18px;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255,255,255,0.95);
+}
+
+.hero-overlay h1, .hero-overlay-rihai h1 {
+  font-size: 20px;
+  color: #0b4a82;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+}
+
+.hero-overlay p, .hero-overlay-rihai p {
+  color: #334e68;
+  margin-bottom: 12px;
+}
+
+.rihai-action-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* === RECTANGULAR GLOSSY AERO BUTTON === */
+.aqua-pill-btn {
+  padding: 6px 18px;
+  border-radius: 5px;
+  border: 1px solid rgba(30, 100, 170, 0.85);
+  color: #07335c;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #ffffff 0%, #bce0fd 49%, #8ec7f7 51%, #d6eeff 100%);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.95);
+  transition: filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.aqua-pill-btn:hover {
+  filter: brightness(1.12);
+  box-shadow: 0 4px 12px rgba(0,90,180,0.35), inset 0 1px 1px rgba(255,255,255,1);
+}
+
+/* === INNER SUB-WINDOWS === */
+.sub-windows-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 14px;
+}
+
+.aero-subwindow {
+  border: 1px solid rgba(120, 170, 215, 0.8);
+  border-radius: 5px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 60, 120, 0.15), inset 0 1px 0 rgba(255,255,255,0.9);
+  overflow: hidden;
+}
+
+.subwindow-header {
+  background: linear-gradient(to bottom, #eef7ff 0%, #cde4f7 50%, #b8d8f2 51%, #dcecfc 100%);
+  padding: 6px 12px;
+  font-weight: bold;
+  color: #134675;
+  border-bottom: 1px solid rgba(120, 170, 215, 0.8);
+  text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+}
+
+.subwindow-content {
+  padding: 12px;
+}
+
+.news-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.badge-new {
+  background: linear-gradient(to bottom, #ff9a3c, #e65c00);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-right: 4px;
+  box-shadow: 0 2px 4px rgba(230,92,0,0.3);
+}
+
+/* === SKEUOMORPHIC ICON TILES === */
+.icon-grid {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.skeuo-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.glossy-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25), inset 0 2px 2px rgba(255,255,255,0.85);
+}
+
+.glossy-box.blue {
+  background: linear-gradient(to bottom, #6ec3ff 0%, #1d82d6 50%, #0e63ad 51%, #3aa0f2 100%);
+}
+
+.glossy-box.green {
+  background: linear-gradient(to bottom, #8ce665 0%, #44ad1f 50%, #2f8c11 51%, #66cc3d 100%);
+}
+
+/* === STATUS BAR FOOTER & GLASS TOGGLE BUTTON === */
+.window-statusbar {
+  background: linear-gradient(to bottom, #e6f2fc 0%, #cce2f5 100%);
+  border: 1px solid rgba(120, 170, 215, 0.8);
+  border-radius: 0 0 6px 6px;
+  padding: 4px 12px;
+  font-size: 11px;
+  color: #355878;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.glass-toggle-pill {
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(30, 100, 170, 0.85);
+  color: #07335c;
+  font-weight: bold;
+  font-size: 10px;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #ffffff 0%, #bce0fd 49%, #8ec7f7 51%, #d6eeff 100%);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15), inset 0 1px 1px rgba(255,255,255,0.95);
+  transition: filter 0.2s ease;
+}
+
+.glass-toggle-pill:hover {
+  filter: brightness(1.12);
+}
+
+/* === WINDOWS 7 POP-UP DIALOG STYLING === */
+.win7-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.win7-dialog-overlay.hidden {
+  display: none;
+}
+
+.win7-dialog {
+  width: 380px;
+  background: linear-gradient(
+    180deg,
+    rgba(235, 248, 255, 0.95) 0%,
+    rgba(200, 232, 255, 0.90) 100%
+  );
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  outline: 1px solid rgba(16, 56, 96, 0.85);
+  border-radius: 7px;
+  box-shadow: 
+    0 18px 40px rgba(0, 18, 42, 0.55),
+    0 4px 12px rgba(0, 0, 0, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.win7-dialog-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 4px 6px 6px;
+  color: #041828;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.9);
+}
+
+.win7-dialog-body {
+  background: linear-gradient(to bottom, #f4faff 0%, #ffffff 100%);
+  border: 1px solid rgba(100, 160, 220, 0.7);
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  box-shadow: inset 0 1px 3px rgba(0,40,90,0.06);
+  margin-bottom: 10px;
+}
+
+.win7-dialog-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(to bottom, #59b3f5 0%, #0d66bd 100%);
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.8);
+  flex-shrink: 0;
+}
+
+.win7-dialog-message {
+  font-size: 13px;
+  color: #1b2a38;
+  line-height: 1.4;
+}
+
+.win7-dialog-footer {
+  display: flex;
+  justify-content: center;
+  padding: 4px;
+}

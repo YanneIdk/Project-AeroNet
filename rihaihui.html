@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="rihai_page_title">国银日海会集团 — 专题门户</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Portrait Main Wrapper -->
+  <div class="aero-main-window" id="main-window">
+    
+    <!-- Title Bar -->
+    <header class="window-titlebar">
+      <div class="window-title">
+        <img src="assets/globe.png" alt="" class="title-icon">
+        <span data-i18n="rihai_window_header">国银日海会集团</span>
+      </div>
+      
+      <div class="window-controls">
+        <select id="lang-switcher" aria-label="Language">
+          <option value="zh" selected>简体中文</option>
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+        </select>
+        <button class="win-btn close" title="Close">✕</button>
+      </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="glossy-navbar">
+      <ul>
+        <li><a href="index.html" data-i18n="nav_home">首页</a></li>
+        <li><a href="rihaihui.html" class="active" data-i18n="nav_rihaihui">国银日海会集团</a></li>
+        <li><a href="index.html#media" data-i18n="nav_media">媒体与下载中心</a></li>
+        <li><a href="index.html#solutions" data-i18n="nav_solutions">企业解决方案</a></li>
+        <li><a href="index.html#about" data-i18n="nav_about">企业愿景</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="window-body">
+      
+      <!-- Hero Banner with water.png fading into grassy green on the right -->
+      <section class="hero-banner-rihai">
+        <div class="hero-overlay-rihai">
+          <h1 data-i18n="rihai_hero_title">日海同心 · 共创蓝色经济新篇章</h1>
+          <p data-i18n="rihai_hero_subtitle">探索海洋科技前沿，践行绿色可持续发展目标。</p>
+          <div class="rihai-action-row">
+            <button class="aqua-pill-btn" id="reports-btn" data-i18n="btn_reports">业务报告 »</button>
+            <button class="aqua-pill-btn" id="goals-btn" data-i18n="btn_goals">绿色目标 »</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sub-Windows Grid -->
+      <div class="sub-windows-grid">
+        
+        <!-- === ARTICLE BLOCK START === -->
+        <article class="aero-subwindow">
+          <div class="subwindow-header">
+            <span data-i18n="rihai_card1_title">核心业务报告</span>
+          </div>
+          <div class="subwindow-content">
+            <ul class="news-list">
+              <li><span class="badge-new">PDF</span> <span data-i18n="report_1">2025年度日海会财务与战略白皮书</span></li>
+              <li><span class="badge-new">PDF</span> <span data-i18n="report_2">全球海洋生态资产评估报告</span></li>
+              <li><span class="badge-new">DOC</span> <span data-i18n="report_3">跨国供应链协同发展纪要</span></li>
+            </ul>
+          </div>
+        </article>
+        <!-- === ARTICLE BLOCK END === -->
+
+        <!-- === ARTICLE BLOCK START === -->
+        <article class="aero-subwindow">
+          <div class="subwindow-header">
+            <span data-i18n="rihai_card2_title">绿色生态目标</span>
+          </div>
+          <div class="subwindow-content icon-grid">
+            <div class="skeuo-icon-item" id="goal-carbon-btn" style="cursor: pointer;">
+              <div class="glossy-box green">ZERO</div>
+              <span data-i18n="goal_carbon">零碳港口计划</span>
+            </div>
+            <div class="skeuo-icon-item" id="goal-water-btn" style="cursor: pointer;">
+              <div class="glossy-box blue">PURE</div>
+              <span data-i18n="goal_water">净水保护工程</span>
+            </div>
+          </div>
+        </article>
+        <!-- === ARTICLE BLOCK END === -->
+
+      </div>
+    </main>
+
+    <!-- Status Bar Footer -->
+    <footer class="window-statusbar">
+      <span data-i18n="status_ready">就绪 | 日海会专属加密通道已连接</span>
+      <button id="glass-toggle-btn" class="glass-toggle-pill">透明</button>
+    </footer>
+
+  </div>
+
+  <!-- Windows 7 Style Popup Dialog Container -->
+  <div id="win7-dialog-overlay" class="win7-dialog-overlay hidden">
+    <div class="win7-dialog">
+      <div class="win7-dialog-titlebar">
+        <span id="win7-dialog-title">国银日海会提示</span>
+        <button id="win7-dialog-close" class="win-btn close">✕</button>
+      </div>
+      <div class="win7-dialog-body">
+        <div class="win7-dialog-icon">ℹ</div>
+        <div class="win7-dialog-message" id="win7-dialog-text">Popup content goes here.</div>
+      </div>
+      <div class="win7-dialog-footer">
+        <button id="win7-dialog-ok" class="aqua-pill-btn">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
